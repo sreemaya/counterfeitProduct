@@ -7,6 +7,13 @@ app.secret_key="block"
 
 # ===================================================admin=================================================================
 
+@app.route('/ahome')
+def ahome():
+    if session['lg'] == "lin":
+        return render_template("Admin/index.html")
+    else:
+        return redirect('/')
+
 @app.route('/reply/<i>',methods=['get','post'])
 def reply(i):
     if session['lg'] == "lin":
