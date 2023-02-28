@@ -1,0 +1,45 @@
+{% extends "Admin/index.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <table  class="table table-bordered" width="1000">
+{% if data %}
+  <tr>
+    <th scope="row">#</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Complaint</th>
+    <th>Date</th>
+    <th>Reply</th>
+    <th>Date</th>
+
+
+  </tr>
+    {% for i in data %}
+  <tr>
+    <th scope="row">{{ loop.index }}</th>
+    <th>{{ i['name'] }}</th>
+    <th>{{ i['email'] }}</th>
+    <th>{{ i['complaint'] }}</th>
+    <th>{{ i['complaint_date'] }}</th>
+{% if i.reply != 'pending' %}
+    <th>{{ i['reply'] }}</th>
+    <th>{{ i['reply_date'] }}</th>
+  {% else %}
+    <th colspan="2"><a href="/reply/{{ i.complaint_id }}" class="btn btn-success">Reply</a> </th>
+  {% endif %}
+  </tr>
+    {% endfor %}
+    {% else %}
+       <p style="color: red; margin-left: 50%;"><marquee>NO DATA ADDED!!!!</marquee></p>
+ {% endif %}
+</table>
+
+</body>
+</html>
+{% endblock %}
