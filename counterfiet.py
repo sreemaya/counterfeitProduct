@@ -52,5 +52,17 @@ def reply(i):
 
     return render_template("Manufacture/reg.html")
 
+# ===================================================manifacture===========================================================
+
+@app.route('/mview_com')
+def mview_com():
+    if session['lg'] == "lin":
+        db = Db()
+        q = db.select("select * from user,spam where spam.uid=user.user_id")
+        return render_template("Manufacture/SPAM.html", data=q)
+    else:
+        return redirect('/')
+
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
