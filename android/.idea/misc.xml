@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/drawable-v24/custom_edit_text_cut.xml" value="0.124" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/drawable/ic_baseline_info_24.xml" value="0.154" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/layout/activity_comp.xml" value="0.25416666666666665" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/layout/activity_complaintsend.xml" value="0.25416666666666665" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/layout/activity_cusom_man.xml" value="0.2" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/layout/activity_custom_p.xml" value="0.25416666666666665" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/layout/activity_customcom.xml" value="0.25416666666666665" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/layout/activity_forgo.xml" value="0.24010416666666667" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/layout/activity_main2.xml" value="0.11302083333333333" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/layout/activity_prediction.xml" value="0.25416666666666665" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/layout/activity_product.xml" value="0.25416666666666665" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/layout/activity_registration.xml" value="0.25416666666666665" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/layout/activity_sendcomplaint.xml" value="0.11302083333333333" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/layout/activity_view_man.xml" value="0.11302083333333333" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/layout/activity_view_prod.xml" value="0.25416666666666665" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/layout/activity_viewcomplaint.xml" value="0.25416666666666665" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/layout/app_bar_main.xml" value="0.11302083333333333" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/layout/content_comp.xml" value="0.25416666666666665" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/layout/content_main.xml" value="0.11302083333333333" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/layout/nav_header_main.xml" value="0.11302083333333333" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/menu/activity_main_drawer.xml" value="0.11302083333333333" />
+        <entry key="..\:/2022-2023/LBS_Counterfiet/and/app/src/main/res/menu/main_activity2.xml" value="0.11302083333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
