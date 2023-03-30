@@ -56,7 +56,12 @@ def login1():
     return render_template("login.html")
 
 
-
+@app.route('/mhome')
+def mhome():
+    if session['lg'] == "lin":
+        return render_template("Manufacture/index.html")
+    else:
+        return redirect('/')
 
 @app.route('/logout')
 def logout():
@@ -65,7 +70,22 @@ def logout():
     return redirect('/')
 
 # ===================================================admin=================================================================
-
+@app.route('/ahome')
+def ahome():
+    if session['lg'] == "lin":
+        return render_template("Admin/index.html")
+    else:
+        return redirect('/')
+    
+    @app.route('/view_comp')
+def view_comp():
+    if session['lg'] == "lin":
+        db = Db()
+        q = db.select("select * from user,complaint where complaint.user_id=user.user_id")
+        print(q)
+        return render_template("Admin/View_complaints.html", data=q)
+    else:
+        return redirect('/')
 # ===================================================manifacture===========================================================
 
 @app.route('/product_add',methods=['post','get'])
@@ -155,6 +175,30 @@ def andviewproducts():
             return jsonify(status="none")
     except Exception as e:
         return jsonify(status="none")
+    
+    
+@app.route('/reg1',methods=['post'])
+def reg1():
+    db=Db()
+    n1=request.form['n']
+    n2=request.form['e']
+    n3=request.form['p']
+    n5=request.form['p1']
+    r={}
+    q = db.selectOne("select * from login where user_name='" + n2 + "'")
+    if q is None:
+        q1 = db.insert(
+            "insert into `login`(`user_name`,`password`,`user_type`) values ( '" + n2 + "','" + n5 + "','user');")
+
+        res=db.insert("insert into `user`(`user_id`,`name`,`email`,`phone`) values ( '"+str(q1)+"','"+n1+"','"+n2+"','"+n3+"');")
+        if int(q1)>0:
+            r['status']="ok"
+        else:
+            r['status']="Please register again"
+    else:
+        r['status'] = "Username already found"
+    print(r)
+    return demjson.encode(r)
 
 
 
