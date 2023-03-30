@@ -86,6 +86,45 @@ def view_comp():
         return render_template("Admin/View_complaints.html", data=q)
     else:
         return redirect('/')
+    
+    @app.route('/view_user')
+def view_user():
+    if session['lg'] == "lin":
+        db=Db()
+        q = db.select("select * from user")
+        return render_template("Admin/View_user.html", data=q)
+    else:
+        return redirect('/')
+
+
+@app.route('/view_com')
+def view_com():
+    if session['lg'] == "lin":
+        db=Db()
+        q=db.select("select * from user,spam where spam.uid=user.user_id")
+        return render_template("Admin/View_com.html",data=q)
+    else:
+        return redirect('/')
+
+@app.route('/approve/<i>')
+def approve(i):
+    if session['lg'] == "lin":
+        db=Db()
+        q=db.update("update login set user_type='manufacturer' where login_id='"+i+"'")
+        return ''' <script> alert("Approved successfully...!!!!");window.location='/view_man' </script>   '''
+
+    else:
+        return redirect('/')
+@app.route('/reject/<i>')
+def reject(i):
+    if session['lg'] == "lin":
+        db = Db()
+        q = db.delete("delete from login where login_id='" + i + "'")
+        q1 = db.delete("delete from company where ins_id='" + i + "'")
+        return ''' <script> alert("Rejected successfully...!!!!");window.location='/view_man' </script>   '''
+
+    else:
+        return redirect('/')
 # ===================================================manifacture===========================================================
 
 @app.route('/product_add',methods=['post','get'])
@@ -148,6 +187,23 @@ def mview_com():
 
 
 # ========================================================user===============================================================================
+
+@app.route('/login',methods=['post'])
+def login():
+    db=Db()
+    username=request.form['username']
+    password=request.form['password']
+    r={}
+    qry="select * from login where user_name='"+username+"' and password='"+password+"' and user_type='user'"
+    res=db.selectOne(qry)
+    if res is not None:
+        r['lid']=res['login_id']
+        r['type']=res['user_type']
+        r['status']="ok"
+    else:
+        r['status']="none"
+    print(r)
+    return demjson.encode(r)
 
 
 @app.route('/andviewproducts',methods=['post','get'])
