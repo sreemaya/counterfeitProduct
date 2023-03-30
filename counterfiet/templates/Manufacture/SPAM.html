@@ -1,0 +1,42 @@
+{% extends "Manufacture/index.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <table  class="table table-bordered" width="1000">
+{% if data %}
+  <tr>
+    <th scope="row">#</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone number</th>
+    <th>Product Name</th>
+    <th>Note</th>
+    <th>Date</th>
+
+
+  </tr>
+    {% for i in data %}
+  <tr>
+    <th scope="row">{{ loop.index }}</th>
+    <th>{{ i['name'] }}</th>
+    <th>{{ i['email'] }}</th>
+    <th>{{ i['phone'] }}</th>
+    <th>{{ i['product_name'] }}</th>
+    <th>{{ i['note'] }}</th>
+    <th>{{ i['date'] }}</th>
+
+  </tr>
+    {% endfor %}
+    {% else %}
+       <p style="color: red; margin-left: 50%;"><marquee>NO DATA ADDED!!!!</marquee></p>
+ {% endif %}
+</table>
+
+</body>
+</html>
+{% endblock %}
