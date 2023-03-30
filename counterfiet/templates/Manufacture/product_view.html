@@ -1,0 +1,37 @@
+{% extends "Manufacture/index.html" %}
+{% block body %}
+<form action="" method="post">
+    <table  class="table table-bordered" width="1000">
+{% if data %}
+
+
+  <tr>
+    <th scope="row">#</th>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Timestamp</th>
+    <th>ingredients</th>
+    <th>Details</th>
+{#  <th></th>#}
+  
+  </tr>
+    {% for i in data %}
+  <tr>
+    <th scope="row">{{ loop.index }}</th>
+    <th>{{ i['productname'] }}</th>
+    <th>{{ i['location'] }}</th>
+    <th>{{ i['timestamp'] }}</th>
+    <th>{{ i['ins'] }}</th>
+    <th>{{ i['details'] }}</th>
+{#  <th><a href="/deletepolicy/{{ i.pid }}" class="btn btn-danger" onclick="return confirm('Are u sure to delete?')">DELETE</a> </th>#}
+  
+
+  </tr>
+    {% endfor %}
+    {% else %}
+       <p style="color: red; margin-left: 50%;"><marquee>NO DATA ADDED!!!!</marquee></p>
+</table>
+
+</form>
+{% endif %}
+{% endblock %}
